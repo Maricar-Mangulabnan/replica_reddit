@@ -36,3 +36,40 @@ class _MyAppState extends State<MyApp> {
     }
 
   }
+
+    @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        automaticallyImplyLeading: false,
+        middle: Text(
+          'Reddit',
+          style: TextStyle(
+            color: CupertinoColors.systemRed,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: [
+              SizedBox(height: 170),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Sign in',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: CupertinoColors.darkBackgroundGray,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
+                ],
+              ),
+              
+              
