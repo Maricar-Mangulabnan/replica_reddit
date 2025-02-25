@@ -71,5 +71,40 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ],
               ),
+
+              SizedBox(height: 60),
+              CupertinoTextField(
+                controller: _username,
+                placeholder: "Email or Username",
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: CupertinoColors.lightBackgroundGray,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              SizedBox(height: 10),
+              CupertinoTextField(
+                controller: _password,
+                placeholder: "Password",
+                padding: EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: CupertinoColors.lightBackgroundGray,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                obscureText: hidePassword,
+                suffix: CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  child: Icon(
+                    hidePassword ? CupertinoIcons.eye : CupertinoIcons.eye_slash,
+                    size: 20,
+                    color: CupertinoColors.systemRed,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      hidePassword = !hidePassword;
+                    });
+                  },
+                ),
+              ),
               
               
