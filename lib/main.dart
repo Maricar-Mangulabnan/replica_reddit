@@ -106,5 +106,61 @@ class _MyAppState extends State<MyApp> {
                   },
                 ),
               ),
+
+                SizedBox(height: 10),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                    color: CupertinoColors.systemRed,
+                    fontSize: 14,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: CupertinoColors.systemRed,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: CupertinoButton(
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(color: CupertinoColors.white),
+                  ),
+                  onPressed: () {
+                    isLogin(_username.text, _password.text)
+                        ? Navigator.pushReplacement(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => Homepage()))
+                        : setState(() {
+                      _password.text = "";
+                      error = "Incorrect Username or Password";
+                    });
+                  },
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                error,
+                style: TextStyle(
+                  color: CupertinoColors.destructiveRed,
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+}
+
+//
+
               
               
